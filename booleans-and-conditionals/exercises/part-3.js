@@ -1,6 +1,6 @@
-let engineIndicatorLight = 'NOT red blinking';
-let fuelLevel = 12000;
-let engineTemperature = 2600;
+let engineIndicatorLight = 'red blinking';
+let fuelLevel = 21000;
+let engineTemperature = 1200;
 
 /* 5) Implement the following checks using if/else if/else statements:
 
