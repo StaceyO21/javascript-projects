@@ -59,21 +59,28 @@ function makeIsoscelesTriangle(height){
 }
 console.log(makeIsoscelesTriangle(5));
 
-function reverseString(str) {
-   let reversedString = "";
-   for(i = str.length-1; i >= 0; i--) {
-       reversedString += str[i];
-   }
-   return reversedString;
-}
-function makeDiamond(height) {
-   let diamond = "";
-   triangle = makeIsoscelesTriangle(height);
-   for(let i = 0; i < height; i++) {
+function upsidedownTriangle(height){
+   let triangle = '';
+   for(let i = height; i > 0; i--) {
       triangle += (makeSpaceLine(height - i - 1, 2*i + 1) + '\n');
-   
-   }
-  return diamond;
+      }
+   return triangle.slice(0,-1);
 }
 
-console.log(makeDiamond(5));;
+function reverse(str) {
+   let reversed = '';
+
+   for (let i = 0; i < str.length; i++) {
+       reversed = str[i] + reversed;
+   }
+
+   return reversed;
+}
+
+function makeDiamond(height) {
+   console.log(makeIsoscelesTriangle(height));
+   // console.log(upsidedownTriangle(height));
+   console.log(reverse(makeIsoscelesTriangle(5)));
+}
+console.log("makeDiamond")
+console.log(makeDiamond(5));
