@@ -53,3 +53,34 @@ let candidateF = {
 let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
 
 // Code your template literal and console.log statements:
+
+const selectRandomEntry = arr => {
+  let index = Math.floor(Math.random()*arr.length);
+  return arr[index];
+}
+
+let selectedCandidates = [];
+while (selectedCandidates.length < 3) {
+  let randomSelectedId = 0;
+  randomSelectedId += selectRandomEntry(idNumbers);
+  if (!selectedCandidates.includes(randomSelectedId)) {
+    selectedCandidates.push(randomSelectedId);
+  }
+}
+console.log(selectedCandidates);
+
+const buildCrewArray = (randomSelectedIds, candidateObjects) => {
+  let crew = [];
+  for (let i = 0; i < randomSelectedIds.length; i++) {
+    for (let j = 0; j < candidateObjects.length; j++) {
+      if (randomSelectedIds[i] === candidateObjects[j].astronautID) {
+        crew.push(candidateObjects[j]);
+
+      }
+
+    }
+
+  }
+  return crew
+}
+console.log(buildCrewArray(selectedCandidates, animals));
