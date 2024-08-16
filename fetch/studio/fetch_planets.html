@@ -7,8 +7,11 @@
         window.addEventListener("load", function () {
             fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
                 response.json().then(function (json) {
+                    let index = 0;
+                    
                     const destination = document.getElementById("destination");
                     destination.addEventListener("click", function () {
+                  
                         destination.innerHTML = `
             <div>
                <h3>Planet ${json[index].name}</h3>
@@ -21,6 +24,7 @@
             });
         });
     </script>
+
 </head>
 
 <body>
